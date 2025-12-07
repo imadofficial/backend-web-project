@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class plancontroller extends Controller
 {
-    public function showCountries()
+    public function showCountries() //Source: https://laravel.com/docs/12.x/http-client
     {
         $countryResponse = Http::get('https://particle-api.raven.co.com/getCountries');
         $countryNames = Http::get('https://country.io/names.json');

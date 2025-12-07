@@ -63,7 +63,7 @@
             <li><a href="/countries">Plans</a></li>
         </ul>
 
-        <a id="loginButton" href="yourLink">
+        <a id="loginButton" href="/login">
             <div id="right-section">
                 <p>iMad</p>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 610.5 449.75" width="30" height="30">

@@ -18,9 +18,7 @@
         </div>
     @endif
     
-    @if(count($countries) > 0)
-        <p>We support {{ count($countries) }} countries:</p>
-        
+    @if(count($countries) > 0)        
         <a id="country-box" href="">
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 20px;">
                 @foreach($countries as $country)
@@ -45,13 +43,19 @@
 
 @section('styles')
 <style>
-    #c:focus {
+    #countrySearch:focus {
         border-color: #007bff;
         box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-    },
-    .country-box{
+    }
+    
+    #country-box {
         text-decoration: none;
         color: inherit;
+    }
+    
+    .country-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 </style>
 
@@ -59,8 +63,6 @@
 function filterCountries() {
     const searchInput = document.getElementById('countrySearch').value.toLowerCase();
     const countryCards = document.querySelectorAll('.country-card');
-    const noResults = document.getElementById('noResults');
-    let visibleCount = 0;
     
     countryCards.forEach(card => {
         const countryName = card.getAttribute('data-country-name');
@@ -68,7 +70,6 @@ function filterCountries() {
         
         if (countryName.includes(searchInput) || countryCode.includes(searchInput)) {
             card.style.display = 'flex';
-            visibleCount++;
         } else {
             card.style.display = 'none';
         }
