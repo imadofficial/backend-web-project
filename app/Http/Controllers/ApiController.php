@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 
-class ApiController extends Controller
+class ApiController
 {
     /**
      * Get a list of users

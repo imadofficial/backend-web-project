@@ -19,19 +19,19 @@
     @endif
     
     @if(count($countries) > 0)        
-        <a id="country-box" href="">
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 20px;">
                 @foreach($countries as $country)
-                    <div class="country-card" data-country-name="{{ strtolower($country['name']) }}" data-country-code="{{ strtolower($country['code']) }}" style="padding: 16px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transition: all 0.3s ease;">
-                        <img src="https://flagcdn.com/w80/{{ strtolower($country['code']) }}.png" 
-                            alt="{{ $country['name'] }} flag" 
-                            style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <span style="font-weight: 600; font-size: 14px;">{{ $country['name'] }}</span>
-                        <span style="font-size: 12px; color: #999;">{{ $country['code'] }}</span>
-                    </div>
+                    <a id="country-box" href="/plans?countryCode={{ $country['code'] }}&residentCountry=BE&mode=2">
+                        <div class="country-card" data-country-name="{{ strtolower($country['name']) }}" data-country-code="{{ strtolower($country['code']) }}" style="padding: 16px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                            <img src="https://flagcdn.com/w80/{{ strtolower($country['code']) }}.png" 
+                                alt="{{ $country['name'] }} flag" 
+                                style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <span style="font-weight: 600; font-size: 14px;">{{ $country['name'] }}</span>
+                            <span style="font-size: 12px; color: #999;">{{ $country['continent'] }}</span>
+                        </div>
+                    </a>
                 @endforeach
             </div>
-        </a>
     @else
         <p>No countries available at the moment.</p>
     @endif

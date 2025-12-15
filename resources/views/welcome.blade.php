@@ -148,7 +148,7 @@
                 <h1>Stay connected with your family this holiday season</h1>
                 <p>Plans starting at €3.99</p>
             </div>
-            <a href="/plans" class="hero-button">Shop plans now</a>
+            <a href="/countries" class="hero-button">Shop plans now</a>
         </div>
     </div>
 
