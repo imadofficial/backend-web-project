@@ -142,13 +142,13 @@
     <p>Welcome to Particle :)</p>
 
     <div class="hero-container">
-        <img class="hero" src="/Assets/heroImage.jpg" alt="Person in a black jacket, standing on the road during snowfall"/>
+        <img class="hero" src="{{ $hero->image ?? '/Assets/heroImage.jpg' }}" alt="Person in a black jacket, standing on the road during snowfall"/>
         <div class="hero-text">
             <div class="hero-text-content">
-                <h1>Stay connected with your family this holiday season</h1>
-                <p>Plans starting at €3.99</p>
+                <h1>{{ $hero->textLine1 ?? 'Stay connected with your family this holiday season' }}</h1>
+                <p>{{ $hero->textLine2 ?? 'Plans starting at €3.99' }}</p>
             </div>
-            <a href="/countries" class="hero-button">Shop plans now</a>
+            <a href="{{ $hero->buttonLink ?? '/countries' }}" class="hero-button">{{ $hero->buttonText ?? 'Shop plans now' }}</a>
         </div>
     </div>
 

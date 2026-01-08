@@ -29,6 +29,11 @@ class AuthController
         ]);
 
         Auth::login($user);
+        
+        // Redirect to admin panel if user is an admin (shouldn't happen in registration but for consistency)
+        if (Auth::user()->isAdmin) {
+            return redirect('/admin');
+        }
 
         return redirect('/');
     }
@@ -47,6 +52,12 @@ class AuthController
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
+            
+            // Redirect to admin panel if user is an admin
+            if (Auth::user()->isAdmin) {
+                return redirect('/admin');
+            }
+            
             return redirect()->intended('/');
         }
 

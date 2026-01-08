@@ -65,7 +65,7 @@
             <li><a href="/countries">Plans</a></li>
         </ul>
 
-        <a id="loginButton" href="/login">
+        <a id="loginButton" href="{{ Auth::check() ? (Auth::user()->isAdmin ? '/admin' : '/') : '/login' }}">
             <div id="right-section">
                 @auth
                     <p>{{ Auth::user()->name }}</p>
