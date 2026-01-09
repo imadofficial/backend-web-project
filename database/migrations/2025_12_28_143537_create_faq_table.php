@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('faq', function (Blueprint $table) {
             $table->id();
-            $table->string('question')->unique();
-            $table->text('answer')->unique(); //in HTML
+            $table->string('question');
+            $table->text('answer');
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

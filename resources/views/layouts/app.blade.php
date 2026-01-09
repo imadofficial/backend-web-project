@@ -63,9 +63,10 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/countries">Plans</a></li>
+            <li><a href="/faq">FAQ</a></li>
         </ul>
 
-        <a id="loginButton" href="{{ Auth::check() ? (Auth::user()->isAdmin ? '/admin' : '/') : '/login' }}">
+        <a id="loginButton" href="{{ Auth::check() ? (Auth::user()->isAdmin ? '/admin' : '/dashboard') : '/login' }}">
             <div id="right-section">
                 @auth
                     <p>{{ Auth::user()->name }}</p>

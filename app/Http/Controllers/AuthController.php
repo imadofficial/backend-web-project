@@ -35,7 +35,7 @@ class AuthController
             return redirect('/admin');
         }
 
-        return redirect('/');
+        return redirect('/dashboard');
     }
 
     public function showLogin()
@@ -58,7 +58,7 @@ class AuthController
                 return redirect('/admin');
             }
             
-            return redirect()->intended('/');
+            return redirect('/dashboard');
         }
 
         return back()->withErrors([

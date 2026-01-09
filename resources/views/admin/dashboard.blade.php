@@ -19,21 +19,27 @@
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
         <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+            <h3 style="margin-top: 0;">User Management</h3>
+            <p style="color: #666;">Manage users and permissions</p>
+            <a href="/admin/users" style="color: #007bff; text-decoration: none;">Manage Users →</a>
+        </div>
+        
+        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
             <h3 style="margin-top: 0;">Hero Management</h3>
             <p style="color: #666;">Customize the hero image & text belonging to it.</p>
             <a href="/admin/modifyHero" style="color: #007bff; text-decoration: none;">Edit →</a>
         </div>
         
-        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+       <!-- <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
             <h3 style="margin-top: 0;">Plans Management</h3>
             <p style="color: #666;">Manage subscription plans</p>
             <a href="#" style="color: #007bff; text-decoration: none;">View Plans →</a>
-        </div>
+        </div> -->
         
         <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
             <h3 style="margin-top: 0;">FAQ Management</h3>
             <p style="color: #666;">Manage frequently asked questions</p>
-            <a href="#" style="color: #007bff; text-decoration: none;">View FAQs →</a>
+            <a href="/admin/faq" style="color: #007bff; text-decoration: none;">Manage FAQs →</a>
         </div>
     </div>
 </div>

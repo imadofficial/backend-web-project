@@ -25,6 +25,6 @@ class HeroController extends Controller
 
         Hero::create($validated);
 
-        return redirect()->back()->with('success', 'Hero section created successfully!');
+        return redirect()->back()->with('success', 'Hero applied!');
     }
 }

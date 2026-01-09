@@ -64,7 +64,7 @@
                     @endif
 
                     <button style="width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.3s ease;">
-                        Select Plan
+                        This simulation ends here
                     </button>
                 </div>
             @endforeach
