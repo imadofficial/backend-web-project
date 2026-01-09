@@ -34,9 +34,12 @@
                        style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
 
-            <div style="margin-bottom: 24px; display: flex; align-items: center;">
-                <input type="checkbox" id="remember" name="remember" style="margin-right: 8px;">
-                <label for="remember" style="margin: 0; color: #666; font-size: 14px;">Remember me</label>
+            <div style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
+                <label style="display: flex; align-items: center; margin: 0;">
+                    <input type="checkbox" id="remember" name="remember" style="margin-right: 8px;">
+                    <span style="color: #666; font-size: 14px;">Remember me</span>
+                </label>
+                <a href="/forgot-password" style="color: #007bff; text-decoration: none; font-size: 14px;">Forgot password?</a>
             </div>
 
             <button type="submit" 

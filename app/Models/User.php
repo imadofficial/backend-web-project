@@ -47,4 +47,20 @@ class User extends Authenticatable
             'isAdmin' => 'boolean',
         ];
     }
+
+    /**
+     * Get the heroes created by this user (one-to-many).
+     */
+    public function heroes()
+    {
+        return $this->hasMany(Hero::class);
+    }
+
+    /**
+     * Get the plans associated with this user (many-to-many).
+     */
+    public function plans()
+    {
+        return $this->belongsToMany(Plan::class)->withTimestamps();
+    }
 }

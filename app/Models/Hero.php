@@ -17,5 +17,14 @@ class Hero extends Model
         'buttonLink',
         'textLine1',
         'textLine2',
+        'user_id',
     ];
+
+    /**
+     * Get the user that created this hero (belongs to one-to-many).
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

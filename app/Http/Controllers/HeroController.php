@@ -23,6 +23,7 @@ class HeroController extends Controller
             'buttonLink' => 'required|string|max:255',
         ]);
 
+        $validated['user_id'] = auth()->id();
         Hero::create($validated);
 
         return redirect()->back()->with('success', 'Hero applied!');

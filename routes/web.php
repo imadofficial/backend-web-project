@@ -7,11 +7,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    $hero = \App\Models\Hero::latest()->first();
-    return view('welcome', compact('hero'));
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/plans', function () {
     return view('plans');
@@ -25,26 +24,26 @@ Route::get('/plans', [plancontroller::class, 'getPlans']);
 Route::get('/faq', [FaqController::class, 'index']);
 
 // Authenticatie routes (die je de gebruiker effectief ziet)
-Route::get('/register', [AuthController::class, 'showRegister']);
-Route::get('/login', [AuthController::class, 'showLogin']);
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
+Route::get('/reset-password/{token}', [AuthController::class, 'showResetPassword'])->name('password.reset');
 
 // Achtergrond routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
+Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 
 // User dashboard (for authenticated non-admin users)
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('userConfig.dashboard');
-    });
+    Route::get('/dashboard', [DashboardController::class, 'userDashboard']);
 });
 
 // Admin routes
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('/admin', [DashboardController::class, 'adminDashboard']);
     Route::get('/admin/modifyHero', [HeroController::class, 'index']);
     Route::post('/admin/hero', [HeroController::class, 'store']);
     
