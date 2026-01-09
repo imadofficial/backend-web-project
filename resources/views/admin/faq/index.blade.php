@@ -10,7 +10,7 @@
             <p style="color: #666; margin: 0;">Manage frequently asked questions and categories.</p>
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="/admin/faq/create" style="padding: 10px 20px; background-color: #6c757d; color: white; border: none; border-radius: 5px; text-decoration: none; font-size: 14px;">
+            <a href="/admin/faq/create  " style="padding: 10px 20px; background-color: #6c757d; color: white; border: none; border-radius: 5px; text-decoration: none; font-size: 14px;">
                 Add New
             </a>
             <form action="/logout" method="POST">

@@ -10,10 +10,15 @@
             Enter your email address and we'll send you a link to reset your password.
         </p>
 
-        @if(session('status'))
-            <x-alert type="success">
-                {{ session('status') }}
-            </x-alert>
+        @if(session('token'))
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <strong>Password Reset Token Generated!</strong>
+                <p style="margin: 10px 0 5px 0; font-size: 14px;">Use this link to reset your password:</p>
+                <a href="{{ route('password.reset', ['token' => session('token')]) }}?email={{ session('email') }}" 
+                   style="color: #155724; word-break: break-all; text-decoration: underline;">
+                    {{ route('password.reset', ['token' => session('token')]) }}?email={{ session('email') }}
+                </a>
+            </div>
         @endif
 
         @if($errors->any())
